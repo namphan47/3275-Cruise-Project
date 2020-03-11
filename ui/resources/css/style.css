@@ -43,6 +43,15 @@
     padding: 10px 20px;
 }
 
+.left-content {
+    overflow: auto;
+}
+
+.right-content {
+    /* overflow: auto; */
+    min-width: 350px;
+}
+
 .bread-crumb {
     position: relative;
     padding: 10px 0 20px;
@@ -60,7 +69,7 @@
 }
 
 .page-content {
-    overflow: auto;
+    overflow: hidden;
 }
 
 /* cruise page */
@@ -86,6 +95,109 @@
 }
 
 /* hr */
-hr{
+
+hr {
+    width: 100%;
     border-color: white;
+}
+
+/* room-type */
+
+.room-type-box .image-group {
+    width: 30%;
+    min-width: 300px;
+}
+
+.room-type-box .image-group img {
+    width: 100%;
+}
+
+.room-type-box.active .image-group {
+    position: relative;
+    border: 5px solid #3066B5;
+}
+
+.room-type-box.active .image-group:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f058";
+    color: #3066B5;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 5px;
+    font-size: 20px;
+}
+
+/* form */
+
+input.form-control, select.form-control {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 0;
+    color: white;
+}
+
+/* room-selection */
+
+.room-selection-wrapper {
+    background-color: white;
+    padding: 10px;
+    display: inline-block;
+}
+
+.room-selection-wrapper .left {
+    margin-right: 30px;
+}
+
+.room-selection-wrapper .middle {}
+
+.room-selection-wrapper .right {
+    margin-left: 30px;
+}
+
+.room-selection-wrapper .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 1px solid black;
+    margin: 30px 0;
+}
+
+.room-selection-wrapper .box {
+    padding: 10px;
+    width: 100px;
+    border: 1px solid black;
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+}
+
+.room-selection-wrapper .box.active {
+    background-color: #2496C9;
+}
+
+.room-selection-wrapper .box.disabled {
+    background-color: #9E9595;
+    pointer-events: none;
+}
+
+/* sample-box */
+
+.sample-box {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+}
+
+.sample-box.white {
+    background-color: white;
+}
+
+.sample-box.blue {
+    background-color: #2496C9;
+}
+
+.sample-box.grey {
+    background-color: #9E9595;
 }
