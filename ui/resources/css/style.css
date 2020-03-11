@@ -1,0 +1,91 @@
+.main-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url("../images/background_ship.png") center no-repeat;
+    background-size: cover;
+}
+
+.main-wrapper:before {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* left-bar */
+
+.left-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100vh;
+    background-color: white;
+}
+
+.left-bar .far {
+    font-size: 50px;
+    color: #2496C9;
+}
+
+.logo {
+    width: 100%;
+}
+
+.main-content {
+    width: calc(100% - 100px);
+    height: 100%;
+    margin-left: 100px;
+    color: white;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.bread-crumb {
+    position: relative;
+    padding: 10px 0 20px;
+    font-size: 20px;
+}
+
+.bread-crumb:after {
+    content: '';
+    position: absolute;
+    border-bottom: 1px solid white;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+}
+
+.page-content {
+    overflow: auto;
+}
+
+/* cruise page */
+
+.cruise-mini-card img {
+    height: 150px;
+}
+
+/* button */
+
+.btn {
+    background-color: #2496C9;
+    border-radius: 50px;
+    min-width: 100px;
+    text-align: center;
+    color: white;
+}
+
+/* route page */
+
+.route-box {
+    border-bottom: 1px solid white;
+}
+
+/* hr */
+hr{
+    border-color: white;
+}
