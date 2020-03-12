@@ -201,3 +201,18 @@ input.form-control, select.form-control {
 .sample-box.grey {
     background-color: #9E9595;
 }
+
+/* login-wrapper */
+
+.login-wrapper .right-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.login-wrapper .right-content input {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+}
