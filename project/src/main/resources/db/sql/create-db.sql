@@ -28,6 +28,7 @@ CREATE TABLE customer (
   password VARCHAR(30)
 );
 
+
 CREATE TABLE room(
   roomNumber INTEGER PRIMARY KEY,
   roomType VARCHAR(50),
