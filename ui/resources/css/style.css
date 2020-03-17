@@ -50,6 +50,7 @@
 .right-content {
     /* overflow: auto; */
     min-width: 350px;
+    max-width: 400px;
 }
 
 .bread-crumb {
@@ -104,12 +105,12 @@ hr {
 /* room-type */
 
 .room-type-box .image-group {
-    width: 30%;
-    min-width: 300px;
+    /* width: 30%;
+    min-width: 300px; */
 }
 
 .room-type-box .image-group img {
-    width: 100%;
+    width: 300px;
 }
 
 .room-type-box.active .image-group {
@@ -215,4 +216,16 @@ input.form-control, select.form-control {
     border-radius: 20px;
     font-size: 20px;
     text-align: center;
+}
+
+.input-text {
+    border: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 10px;
+}
+
+.icon {
+    font-size: 25px;
 }
