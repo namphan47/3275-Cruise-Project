@@ -1,16 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <script src="../resources/jquery-3.4.1.min.js"></script>
-    <script src="../resources/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../resources/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-    </link>
-    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
-    </link>
-    <link rel="stylesheet" type="text/css" href="../resources/fontawesome-free-5.12.1-web/css/all.min.css">
-    </link>
-    <script src="../resources/js/controller.js"></script>
+<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="<c:url value="/resources/jquery-3.4.1.min.js" />"></script>
+<script
+	src="<c:url value="/resources/bootstrap-4.4.1-dist/js/bootstrap.min.js" />"></script>
+<link
+	href="<c:url 
+value="/resources/bootstrap-4.4.1-dist/css/bootstrap.min.css" />"
+	rel="stylesheet" type="text/css">
+</link>
+<link href="<c:url 
+value="/resources/css/style.css" />"
+	rel="stylesheet" type="text/css">
+</link>
+<link
+	href="<c:url 
+value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
+	rel="stylesheet" type="text/css">
+</link>
+<script
+	src="<c:url value="/resources/js/controller.js" />"></script>
+<%@ page isELIgnored="false"%>
 </head>
 
 <body>
@@ -76,7 +92,7 @@
                                         </div>
                                         <div>
                                             Unwind in roomy quarters adorned in a charming nautical
-                                            motif, with a real porthole window—or possibly 2!
+                                            motif, with a real porthole window or possibly 2!
                                         </div>
                                     </div>
                                 </div>

@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-public class HelloWorldController {
+public class ActivitySelectionPageController {
 
 	
-	@RequestMapping("/helloworld")
+	@RequestMapping("/activity_selection")
 	public String handler(Model model) {
 
-		return "helloworld";
+		return "activity_selection";
 	}
 }
