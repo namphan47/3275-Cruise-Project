@@ -27,14 +27,14 @@ startDate DATE,
 returnDate DATE,
 video VARCHAR(30),
 minPriceForTwo INTEGER,
-activityID INTEGER,
+activityID INTEGER
 );
 
 
 CREATE TABLE cruise (
 cruiseID INT PRIMARY KEY,
 name VARCHAR(30),
-routeID INTEGER,
+routeID INTEGER
 );
 
 
@@ -67,7 +67,7 @@ CREATE TABLE booking(
  customerID INTEGER,
  routeID INTEGER,
  activityID INTEGER,
- roomNumber INTEGER,
+ roomNumber INTEGER
 
 );
 
