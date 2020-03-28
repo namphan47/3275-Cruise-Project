@@ -4,19 +4,23 @@ DROP TABLE customer IF EXISTS;
 DROP TABLE room IF EXISTS;
 DROP TABLE roomType IF EXISTS;
 DROP TABLE booking IF EXISTS;
-DROP TABLE activity IF EXISTS;
 DROP TABLE onBoardActivity IF EXISTS;
 DROP TABLE portOfCall IF EXISTS;
 
-CREATE TABLE cruise (
-cruiseID INT PRIMARY KEY,
-name VARCHAR(30),
-routeID INTEGER,
-FOREIGN KEY (routeID) references route(routeID)
+
+CREATE TABLE onBoardActivity(
+ activityID INTEGER PRIMARY KEY,
+ activityName VARCHAR(50),
+ guestCount INTEGER,
+ description VARCHAR(50),
+ price NUMBER,
+ imageSrc VARCHAR(50)
 );
 
+
+
 CREATE TABLE route (
-routeID INTEGER PRIMARY KEY
+routeID INTEGER PRIMARY KEY,
 name VARCHAR(30),
 ship VARCHAR(30),
 startDate DATE,
@@ -24,8 +28,16 @@ returnDate DATE,
 video VARCHAR(30),
 minPriceForTwo INTEGER,
 activityID INTEGER,
-FOREIGN KEY (activityID) references activity(activityID)
 );
+
+
+CREATE TABLE cruise (
+cruiseID INT PRIMARY KEY,
+name VARCHAR(30),
+routeID INTEGER,
+);
+
+
 
 CREATE TABLE customer (
   customerID INTEGER PRIMARY KEY,
@@ -56,21 +68,9 @@ CREATE TABLE booking(
  routeID INTEGER,
  activityID INTEGER,
  roomNumber INTEGER,
- FOREIGN KEY (roomNumber) references room(roomNumber),
- FOREIGN KEY (activityID) references activity(activityID),
- FOREIGN KEY (routeID) references route(routeID),
- FOREIGN KEY (customerID) references customer(customerID) 
 
 );
 
-CREATE TABLE activity(
- activityID INTEGER PRIMARY KEY,
- activityName VARCHAR(50),
- guestCount INTEGER,
- description VARCHAR(50),
- price NUMBER,
- imageSrc VARCHAR(50)
-);
 
 CREATE TABLE portOfCall(
  portName VARCHAR(50),
