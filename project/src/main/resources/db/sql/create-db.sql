@@ -10,30 +10,30 @@ DROP TABLE portOfCall IF EXISTS;
 
 CREATE TABLE onBoardActivity(
  activityID INTEGER PRIMARY KEY,
- activityName VARCHAR(50),
+ activityName VARCHAR(5000),
  guestCount INTEGER,
- description VARCHAR(50),
+ description VARCHAR(5000),
  price NUMBER,
- imageSrc VARCHAR(50)
+ imageSrc VARCHAR(5000)
 );
 
 
 
 CREATE TABLE route (
 routeID INTEGER PRIMARY KEY,
-name VARCHAR(30),
-ship VARCHAR(30),
-startDate DATE,
-returnDate DATE,
-video VARCHAR(30),
+name VARCHAR(300),
+ship VARCHAR(300),
+startDate FLOAT,
+returnDate FLOAT,
+video VARCHAR(3000),
 minPriceForTwo INTEGER,
 activityID INTEGER
 );
 
 
 CREATE TABLE cruise (
-cruiseID INT PRIMARY KEY,
-name VARCHAR(30),
+cruiseID INTEGER PRIMARY KEY,
+name VARCHAR(300),
 routeID INTEGER
 );
 
@@ -41,24 +41,24 @@ routeID INTEGER
 
 CREATE TABLE customer (
   customerID INTEGER PRIMARY KEY,
-  name VARCHAR(30),
-  password VARCHAR(30)
+  name VARCHAR(300),
+  password VARCHAR(3000)
 );
 
 
 CREATE TABLE room(
   roomNumber INTEGER PRIMARY KEY,
-  roomType VARCHAR(50),
+  roomType VARCHAR(5000),
   roomTypeID INTEGER,
-  price DOUBLE
+  price INTEGER
   
 );
 
 CREATE TABLE roomType(
   roomTypeID INTEGER PRIMARY KEY,
-  name VARCHAR(50),
-  basePrice NUMBER,
-  description VARCHAR(50)	
+  name VARCHAR(500),
+  basePrice INTEGER,
+  description VARCHAR(5000)	
 );
 
 CREATE TABLE booking(
@@ -73,9 +73,9 @@ CREATE TABLE booking(
 
 
 CREATE TABLE portOfCall(
- portName VARCHAR(50),
- portDesc VARCHAR(50),
- price NUMBER,
- imageSrc VARCHAR(50)
+ portName VARCHAR(500),
+ portDesc VARCHAR(500),
+ price INTEGER,
+ imageSrc VARCHAR(500)
 );
 
