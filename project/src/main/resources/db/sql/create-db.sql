@@ -20,21 +20,21 @@ CREATE TABLE onBoardActivity(
 
 
 CREATE TABLE route (
-routeID INTEGER PRIMARY KEY,
-name VARCHAR(300),
-ship VARCHAR(300),
-startDate FLOAT,
-returnDate FLOAT,
-video VARCHAR(3000),
-minPriceForTwo INTEGER,
-activityID INTEGER
+	routeID INTEGER PRIMARY KEY,
+	name VARCHAR(300),
+	ship VARCHAR(300),
+	startDate FLOAT,
+	returnDate FLOAT,
+	video VARCHAR(3000),
+	minPriceForTwo INTEGER,
+	activityID INTEGER
 );
 
 
 CREATE TABLE cruise (
-cruiseID INTEGER PRIMARY KEY,
-name VARCHAR(300),
-routeID INTEGER
+	cruiseID INTEGER PRIMARY KEY,
+	name VARCHAR(300),
+	routeID INTEGER
 );
 
 
@@ -68,7 +68,6 @@ CREATE TABLE booking(
  routeID INTEGER,
  activityID INTEGER,
  roomNumber INTEGER
-
 );
 
 

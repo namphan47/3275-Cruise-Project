@@ -17,11 +17,17 @@ import com.nameme.project.model.*;
 public class CruisePageController {
 	@Autowired
 	CruiseDao cruiseDao;
+	
+	@Autowired
+	RouteDao routeDao;
 
 	@RequestMapping("/cruise")
 	public String handler(Model model) {
-		List<CruiseModel> list = cruiseDao.findAll();
-		System.out.println("Cruise: " + list.size());
+		List<CruiseModel> listCruise = cruiseDao.findAll();
+		List<RouteModel> listRoute = routeDao.findAll();
+		
+		System.out.println("Cruise: " + listCruise.size());
+		System.out.println("route: " + listRoute.size());
 
 		return "cruise";
 	}
