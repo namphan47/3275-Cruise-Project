@@ -38,6 +38,19 @@ public class RoomTypeDaoImpl implements RoomTypeDao {
         
 	}
 
+	public RoomTypeModel findById(int id) {
+		// TODO Auto-generated method stub
+		
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("id", id);
+		String sql = "SELECT * FROM roomType WHERE roomTypeID =:id";
+
+		List<RoomTypeModel> result = namedParameterJdbcTemplate.query(sql, params, new Mapper());
+
+		return result.size() == 0 ? null : result.get(0);
+	}
+
+
 	private static final class Mapper implements RowMapper<RoomTypeModel> {
 
 		public RoomTypeModel mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -47,10 +60,4 @@ public class RoomTypeDaoImpl implements RoomTypeDao {
 			return model;
 		}
 	}
-
-	public RoomTypeModel findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
