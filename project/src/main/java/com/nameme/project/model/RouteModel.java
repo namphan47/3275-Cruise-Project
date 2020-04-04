@@ -4,23 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RouteModel {
+	public int id;
 	public String name;
 	public String ship;
-	public int startDate;
-	public int returnDate;
+	public float startDate;
+	public float returnDate;
 	public String video;
 	public double minPriceForTwo;
 	
 	public List<RoomModel> rooms = new ArrayList<RoomModel>();
 	public List<ActivityModel> activities = new ArrayList<ActivityModel>();
 	
-	public String startDateToString() {
-		return "";
-	}
-
-	public String returnDateToString() {
-		return "";
-	}
 
 	@Override
 	public String toString() {
