@@ -30,7 +30,7 @@ function selectCruise(id) {
 	console.log(id);
 	DATA.cruise["id"] = id;
 	save();
-	move(URLS.route);
+	move(URLS.route + "?cruise-id=" + id);
 }
 
 function selectRoute(id) {

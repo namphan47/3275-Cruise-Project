@@ -1,6 +1,6 @@
 
 INSERT INTO roomType VALUES(1,'Inside',5000,'Sail away in a generous-sized stateroom');
-INSERT INTO roomType VALUES(2,'OceanView',7000,'Unwind in roomy quarters');
+INSERT INTO roomType VALUES(2,'Vancouver',7000,'Unwind in roomy quarters');
 INSERT INTO roomType VALUES(3,'Verandah',9000,'These are our most spacious non-Concierge staterooms');
 
 Insert INTO onBoardActivity
@@ -12,6 +12,10 @@ VALUES(3,'A Musical Spectacular',80,'Be enchanted as the magic of Frozen springs
 
 INSERT INTO route
 VALUES(1, 'Dawes Glacier, Alaska | Skagway, Alaska | Juneau, Alaska | Ketchikan, Alaska', 'Disney Wonder ship', 1595203200000,1595808000000, '../resources/videos/video1.mp4', 5000, 1);
+
+INSERT INTO route
+VALUES(2, 'ddd', 'Disney Wonder ship', 1595203200000,1595808000000, '../resources/videos/video1.mp4', 5000, 1);
+
 
 INSERT INTO customer
 VALUES(1,'KRISHMA', 'sukhija90');
@@ -35,13 +39,13 @@ VALUES( 'Homer' , 'A most distinguishing feature is the Homer Spit, which is a g
 
 
 INSERT INTO cruise
-VALUES(1 , 'Alaska' ,1 );
+VALUES(1 , 'Alaska' ,'1,2' );
 
 INSERT INTO cruise
-VALUES(2 , 'Dawes Glacier' ,2 );
+VALUES(2 , 'Dawes Glacier' ,'2' );
 
 INSERT INTO cruise
-VALUES(3 , 'Juneau' ,2 );
+VALUES(3 , 'Juneau',''  );
 
 
 

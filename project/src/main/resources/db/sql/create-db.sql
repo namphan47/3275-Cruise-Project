@@ -34,7 +34,7 @@ CREATE TABLE route (
 CREATE TABLE cruise (
 	cruiseID INTEGER PRIMARY KEY,
 	name VARCHAR(300),
-	routeID INTEGER
+	routeIDs VARCHAR(300)
 );
 
 

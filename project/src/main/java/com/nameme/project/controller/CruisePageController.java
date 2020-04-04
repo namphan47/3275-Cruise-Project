@@ -26,8 +26,14 @@ public class CruisePageController {
 		List<CruiseModel> listCruise = cruiseDao.findAll();
 		List<RouteModel> listRoute = routeDao.findAll();
 		
+		for(CruiseModel c : listCruise) {
+			c.filterRoutes(listRoute);
+		}
+		
 		System.out.println("Cruise: " + listCruise.size());
 		System.out.println("route: " + listRoute.size());
+		
+		model.addAttribute("cruises", listCruise);
 
 		return "cruise";
 	}
