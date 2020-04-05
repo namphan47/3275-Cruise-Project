@@ -104,6 +104,9 @@ function checkPage() {
 		selectRoom($(".box[data-number=" + DATA.room["id"] + "]"));
 	} else if (currentPage.indexOf(URLS.activity_selection) > 0) {
 	}
+	
+	// set room
+	$("#selected-room").text(DATA.room["id"]);
 }
 
 function save() {
