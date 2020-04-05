@@ -48,17 +48,15 @@ CREATE TABLE customer (
 
 CREATE TABLE room(
   roomNumber INTEGER PRIMARY KEY,
-  roomType VARCHAR(5000),
-  roomTypeID INTEGER,
-  price INTEGER
-  
+  roomTypeID INTEGER
 );
 
 CREATE TABLE roomType(
   roomTypeID INTEGER PRIMARY KEY,
   name VARCHAR(500),
   basePrice INTEGER,
-  description VARCHAR(5000)	
+  description VARCHAR(5000),	
+  image VARCHAR(5000)	
 );
 
 CREATE TABLE booking(

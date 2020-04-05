@@ -10,11 +10,13 @@ var URLS = {
 };
 
 var ROOM_NO = {
-	disabled : [ 1001, 1002 ],
+	disabled : [],
 	data : [],
 	from : 1001,
 	to : 1034
 };
+
+var params = new URLSearchParams(window.location.search);
 
 function init() {
 	DATA = {
@@ -30,14 +32,16 @@ function selectCruise(id) {
 	console.log(id);
 	DATA.cruise["id"] = id;
 	save();
-	move(URLS.route + "?cruise-id=" + id);
+	params.set("cruise-id", id);
+	move(URLS.route + "?" + params.toString());
 }
 
 function selectRoute(id) {
 	console.log(id);
 	DATA.route["id"] = id;
 	save();
-	move(URLS.room_type);
+	params.set("route-id", id);
+	move(URLS.room_type + "?" + params);
 }
 
 function nextRoom() {
@@ -47,7 +51,10 @@ function nextRoom() {
 		DATA.room_type["name"] = name;
 		DATA.room_type["guest"] = parseInt($("[name=guest-number]").val());
 		save();
-		move(URLS.room_selection);
+		params.set("room-type-id", DATA.room_type["id"]);
+		params.set("name", DATA.room_type["name"]);
+		params.set("guest", DATA.room_type["guest"]);
+		move(URLS.room_selection + "?" + params.toString());
 	} else {
 		alert("Name cannot be empty");
 	}
@@ -56,7 +63,8 @@ function nextRoom() {
 function nextActivity() {
 	if ($("[name=room-selection]")[0].selectedIndex > 0) {
 		save();
-		move(URLS.activity_selection);
+		params.set("guest", DATA.room["id"]);
+		move(URLS.activity_selection+ "?" + params.toString());
 	} else {
 		alert("Please select room");
 	}
@@ -104,6 +112,11 @@ function save() {
 
 function move(path) {
 	window.location.href = window.location.origin + "/" + path;
+}
+
+function moveWithParams(path) {
+	window.location.href = window.location.origin + "/" + path
+			+ window.location.search;
 }
 
 // animations
@@ -169,6 +182,10 @@ function generateActivity() {
 			addActivity(this);
 		});
 	}
+}
+
+function goBack() {
+	window.history.back();
 }
 
 $(document).ready(function() {

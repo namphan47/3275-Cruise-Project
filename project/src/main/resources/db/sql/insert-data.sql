@@ -1,7 +1,11 @@
 
-INSERT INTO roomType VALUES(1,'Inside',5000,'Sail away in a generous-sized stateroom');
-INSERT INTO roomType VALUES(2,'Vancouver',7000,'Unwind in roomy quarters');
-INSERT INTO roomType VALUES(3,'Verandah',9000,'These are our most spacious non-Concierge staterooms');
+INSERT INTO roomType VALUES(1,'Inside',5000,'Sail away in a generous-sized stateroom with a
+											nautical motif and porthole mirror (no exterior view).','room_type1.png');
+INSERT INTO roomType VALUES(2,'Vancouver',7000,'Unwind in roomy quarters adorned in a charming
+											nautical motif, with a real porthole window or possibly 2!','room_type2.png');
+INSERT INTO roomType VALUES(3,'Verandah',9000,'These are our most spacious non-Concierge
+											staterooms, each with a private verandah (some with partial
+											views).','room_type3.png');
 
 Insert INTO onBoardActivity
 VALUES(1,'Beverage Tastings',100,'Discover libation tastings that take you from Amari to Whiskey with an assortment of pleasurable beverages in between!', 100, '../resources/images/activity_1.png');
@@ -50,11 +54,11 @@ VALUES(3 , 'Juneau',''  );
 
 
 INSERT INTO room
-VALUES(101 , 'Inside' ,1 ,200);
-
-INSERT INTO room
-VALUES(202 , 'Oceanview' ,1 ,200);
-
-INSERT INTO room
-VALUES(01 , 'Verandah' ,1 ,200);
+VALUES(1001 , 1 );
+--
+--INSERT INTO room
+--VALUES(202 , 2 );
+--
+--INSERT INTO room
+--VALUES(01 , 3 );
 

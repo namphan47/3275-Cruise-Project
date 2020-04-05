@@ -55,8 +55,11 @@ public class RoomTypeDaoImpl implements RoomTypeDao {
 
 		public RoomTypeModel mapRow(ResultSet rs, int rowNum) throws SQLException {
 			RoomTypeModel model = new RoomTypeModel();
+			model.id = rs.getInt("roomTypeID");
 			model.name = rs.getString("name");
 			model.basePrice = rs.getDouble("basePrice");
+			model.image = rs.getString("image");
+			model.description = rs.getString("description");
 			return model;
 		}
 	}

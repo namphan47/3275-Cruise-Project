@@ -8,5 +8,5 @@ public interface RoomDao {
 	 
 	List<RoomModel> findAll();
 	RoomModel findById(int id);
-
+	int create(int id, int type_id);
 }

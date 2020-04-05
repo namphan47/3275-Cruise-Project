@@ -24,7 +24,6 @@ public class RoomDaoImpl implements RoomDao {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
 	}
 
-
 	//@Override
 	public List<RoomModel> findAll() {
 		
@@ -36,6 +35,17 @@ public class RoomDaoImpl implements RoomDao {
         
         return result;
         
+	}
+	
+	public int create(int id, int type_id) {
+		// TODO Auto-generated method stub
+		
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("id", id);
+		params.put("type_id", type_id);
+		String sql = "INSERT INTO room VALUES(:id,:type_id)";
+
+		return namedParameterJdbcTemplate.update(sql, params);
 	}
 
 
@@ -56,6 +66,8 @@ public class RoomDaoImpl implements RoomDao {
 		public RoomModel mapRow(ResultSet rs, int rowNum) throws SQLException {
 			RoomModel model = new RoomModel();
 			model.roomNumber = rs.getInt("roomNumber");
+			model.roomTypeID = rs.getInt("roomTypeID");
+			
 			return model;
 		}
 	}

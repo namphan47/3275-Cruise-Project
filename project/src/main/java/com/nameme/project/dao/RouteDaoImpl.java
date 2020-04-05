@@ -23,7 +23,7 @@ public class RouteDaoImpl implements RouteDao {
 	public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
 	}
-
+	
 	public List<RouteModel> findAll() {
 
 		String sql = "SELECT * FROM route";
@@ -51,9 +51,8 @@ public class RouteDaoImpl implements RouteDao {
 			model.id = rs.getInt("routeID");
 			model.name = rs.getString("name");
 			model.ship = rs.getString("ship");
-			model.startDate = rs.getFloat("startDate");
-			model.returnDate = rs.getFloat("returnDate");
-			model.video = rs.getString("video");
+			model.setStartDate(rs.getFloat("startDate"));
+			model.setReturnDate(rs.getFloat("returnDate"));
 			model.minPriceForTwo = rs.getDouble("minPriceForTwo");
 			return model;
 		}

@@ -23,16 +23,21 @@ public class RoutePageController {
 
 	@Autowired
 	RouteDao routeDao;
+	
+	@Autowired
+	RoomTypeDao roomTypeDao;
 
 	@RequestMapping(params = "cruise-id")
 	public String handleEmployeeRequestByDept(@RequestParam("cruise-id") int id, Model model) {
 		CruiseModel cruise = cruiseDao.findById(id);
 		List<RouteModel> listRoute = routeDao.findAll();
+		List<RoomTypeModel> listRoomType = roomTypeDao.findAll();
 
 		cruise.filterRoutes(listRoute);
 		
 		model.addAttribute("cruise", cruise);
-		model.addAttribute("routes", listRoute);
+		model.addAttribute("routes", cruise.routes);
+		model.addAttribute("roomTypes", listRoomType);
 		return "route";
 	}
 

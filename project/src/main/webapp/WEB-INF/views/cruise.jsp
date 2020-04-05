@@ -30,16 +30,7 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 
 <body>
 	<div class="main-wrapper">
-		<div class="left-bar d-flex flex-column">
-			<img class="logo" src="../resources/images/logo.png" alt=""> <span
-				class="flex-grow-1"></span>
-			<div class="text-center p-3">
-				<i class="far fa-user-circle"></i>
-			</div>
-			<div class="text-center p-3">
-				<i class="far fa-question-circle"></i>
-			</div>
-		</div>
+		<jsp:include page="left_bar.jsp" />
 		<div class="main-content">
 			<div class="d-flex flex-column h-100">
 				<div class="bread-crumb">

@@ -24,8 +24,6 @@ public class BookingDaoImpl implements BookingDao {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
 	}
 
-
-	//@Override
 	public List<BookingModel> findAll() {
 		
 		Map<String, Object> params = new HashMap<String, Object>();

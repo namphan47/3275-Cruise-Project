@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<fmt:setLocale value="en_CA" scope="session"/>
 <!DOCTYPE html>
 <html>
 
@@ -30,27 +32,18 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 
 <body>
 	<div class="main-wrapper">
-		<div class="left-bar d-flex flex-column">
-			<img class="logo" src="../resources/images/logo.png" alt=""> <span
-				class="flex-grow-1"></span>
-			<div class="text-center p-3">
-				<i class="far fa-user-circle"></i>
-			</div>
-			<div class="text-center p-3">
-				<i class="far fa-question-circle"></i>
-			</div>
-		</div>
+		<jsp:include page="left_bar.jsp" />
 		<div class="main-content">
 			<div class="d-flex flex-column h-100">
 				<div class="bread-crumb">
 					Home / <span onclick="move(URLS.cruise)">Cruises</span> / <span
-						onclick="move(URLS.route)">Routes</span>
+						onclick="moveWithParams(URLS.route)">Routes</span>
 				</div>
 				<div class="page-content flex-grow-1 pt-5">
 					<div class="d-flex h-100">
 						<div class="flex-grow-1 pr-3 left-content">
 							<div>
-								<video width="100%" height="50%"  muted autoplay>
+								<video width="100%" height="50%" muted autoplay>
 									<source src="../resources/videos/video1.mp4" type="video/mp4">
 									Your browser does not support the video tag.
 								</video>
@@ -77,23 +70,25 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 						<div class="flex-shrink-0 pl-3 right-content overflow-auto">
 							<c:forEach items="${routes}" var="route">
 								<div class="route-box pb-5 mb-5 pr-3">
-									<h5>From July 20, 2020 to July 27, 2020</h5>
+									<h5>From <fmt:formatDate value="${route.startDateObj}" type="date"
+										pattern="MMM dd, yyyy" /> to <fmt:formatDate value="${route.endDateObj}" type="date"
+										pattern="MMM dd, yyyy" /></h5>
+									<div>${route.name}</div>
 									<div>on Disney Wonder ship</div>
 									<br>
 									<div class="d-flex">
 										<div class="flex-grow-1 row">
-											<div class="col">
-												Inside <br> $5,000
-											</div>
-											<div class="col">
-												Oceanview <br> $7,000
-											</div>
-											<div class="col">
-												Verandah <br> $9,000
-											</div>
+											<c:forEach items="${roomTypes}" var="roomType">
+												<div class="col">
+													${roomType.name} <br>
+													<fmt:formatNumber value="${roomType.basePrice}"
+														type="currency" currencySymbol="$" />
+												</div>
+											</c:forEach>
 										</div>
 										<div class="pl-3">
-											<button type="button" class="btn" onclick="selectRoute(0)">SELECT</button>
+											<button type="button" class="btn"
+												onclick="selectRoute(${route.id})">SELECT</button>
 										</div>
 									</div>
 								</div>
