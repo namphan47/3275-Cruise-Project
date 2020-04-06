@@ -34,7 +34,7 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 		<div class="main-content">
 			<div class="d-flex flex-column h-100">
 				<div class="bread-crumb">
-					Home / <span onclick="move(URLS.cruise)">Cruises</span>
+					<span onclick="move(URLS.cruise)">Home</span> / <span onclick="move(URLS.cruise)">Cruises</span>
 				</div>
 				<div class="page-content flex-grow-1 overflow-auto">
 					<c:forEach items="${cruises}" var="cruise">

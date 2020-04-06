@@ -6,6 +6,9 @@ import java.util.List;
 public class BookingModel {
 	public int id;
 	public int guestCount;
+	public int customerID;
+	public int routeID;
+	public int roomNumber;
 	public CustomerModel customer;
 	public RouteModel route;
 	public List<ActivityModel> activities = new ArrayList<ActivityModel>();

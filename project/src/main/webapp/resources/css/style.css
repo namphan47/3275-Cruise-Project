@@ -50,7 +50,7 @@
 .right-content {
     /* overflow: auto; */
     min-width: 350px;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .bread-crumb {
@@ -243,4 +243,8 @@ input.form-control, select.form-control {
 
 select option:not(:disabled) {
     font-weight: bold;
+}
+
+.cursor-pointer{
+	cursor: pointer;
 }

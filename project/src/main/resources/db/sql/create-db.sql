@@ -6,6 +6,7 @@ DROP TABLE roomType IF EXISTS;
 DROP TABLE booking IF EXISTS;
 DROP TABLE onBoardActivity IF EXISTS;
 DROP TABLE portOfCall IF EXISTS;
+DROP TABLE activity IF EXISTS;
 
 
 CREATE TABLE onBoardActivity(
@@ -26,8 +27,7 @@ CREATE TABLE route (
 	startDate FLOAT,
 	returnDate FLOAT,
 	video VARCHAR(3000),
-	minPriceForTwo INTEGER,
-	activityID INTEGER
+	minPriceForTwo INTEGER
 );
 
 
@@ -40,8 +40,8 @@ CREATE TABLE cruise (
 
 
 CREATE TABLE customer (
-  customerID INTEGER PRIMARY KEY,
-  name VARCHAR(300),
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(300),
   password VARCHAR(3000)
 );
 
@@ -64,7 +64,6 @@ CREATE TABLE booking(
  guestCount INTEGER,
  customerID INTEGER,
  routeID INTEGER,
- activityID INTEGER,
  roomNumber INTEGER
 );
 
@@ -76,3 +75,8 @@ CREATE TABLE portOfCall(
  imageSrc VARCHAR(500)
 );
 
+CREATE TABLE activity(
+ id INTEGER PRIMARY KEY,
+ guestCount INTEGER,
+ bookingID INTEGER
+);

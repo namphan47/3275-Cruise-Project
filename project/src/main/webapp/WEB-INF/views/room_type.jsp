@@ -28,15 +28,26 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 </link>
 <script src="<c:url value="/resources/js/controller.js" />"></script>
 <%@ page isELIgnored="false"%>
+<script type="text/javascript">
+var ROOM_TYPES = {
+			  <c:forEach items="${roomTypes}" var="roomType">
+			  ${roomType.id}:{
+				  id:${roomType.id},
+				  name: "${roomType.name}",
+				  basePrice: ${roomType.basePrice}
+			  },
+		  </c:forEach>
+};
+</script>
 </head>
-
 <body>
 	<div class="main-wrapper">
 		<jsp:include page="left_bar.jsp" />
 		<div class="main-content">
 			<div class="d-flex flex-column h-100">
 				<div class="bread-crumb">
-					Home / <span onclick="move(URLS.cruise)">Cruises</span> / <span
+					<span onclick="move(URLS.cruise)">Home</span> / <span
+						onclick="move(URLS.cruise)">Cruises</span> / <span
 						onclick="moveWithParams(URLS.route)">Routes</span> / <span
 						onclick="moveWithParams(URLS.room_type)">Rooms</span>
 				</div>
@@ -83,11 +94,6 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 							<div class="pb-5 mb-5 px-3 d-flex flex-column h-100">
 								<form class="flex-grow-1 overflow-auto">
 									<div class="form-group">
-										<label for="">Name</label> <input type="text"
-											class="form-control" name="name"
-											placeholder="Enter Your Name">
-									</div>
-									<div class="form-group">
 										<label for="">Room Type</label> <select class="form-control"
 											name="room-type">
 											<option disabled selected>Select Room Type</option>
@@ -99,8 +105,8 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 									</div>
 									<div class="form-group">
 										<label for="">Number of guests</label> <select
+											onchange="onGuestChange()"
 											class="form-control" name="guest-number">
-											<option value="1">1</option>
 											<option value="2" selected>2</option>
 											<option value="3">3</option>
 											<option value="4">4</option>
@@ -118,7 +124,9 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 								<hr>
 								<div class="d-flex">
 									<span>Sub Total</span> <span class="flex-grow-1"></span>
-									<h4>$25,000 CAD</h4>
+									<h4>
+										<span id="total-text"></span> CAD
+									</h4>
 								</div>
 							</div>
 						</div>

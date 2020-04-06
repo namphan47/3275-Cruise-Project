@@ -1,28 +1,28 @@
 
 INSERT INTO roomType VALUES(1,'Inside',5000,'Sail away in a generous-sized stateroom with a
 											nautical motif and porthole mirror (no exterior view).','room_type1.png');
-INSERT INTO roomType VALUES(2,'Vancouver',7000,'Unwind in roomy quarters adorned in a charming
+INSERT INTO roomType VALUES(2,'Oceanview',7000,'Unwind in roomy quarters adorned in a charming
 											nautical motif, with a real porthole window or possibly 2!','room_type2.png');
 INSERT INTO roomType VALUES(3,'Verandah',9000,'These are our most spacious non-Concierge
 											staterooms, each with a private verandah (some with partial
 											views).','room_type3.png');
 
 Insert INTO onBoardActivity
-VALUES(1,'Beverage Tastings',100,'Discover libation tastings that take you from Amari to Whiskey with an assortment of pleasurable beverages in between!', 100, '../resources/images/activity_1.png');
+VALUES(1,'Beverage Tastings',100,'Discover libation tastings that take you from Amari to Whiskey with an assortment of pleasurable beverages in between!', 100, 'activity_1.png');
 Insert INTO onBoardActivity
-VALUES(2,'Pirate Night',100,'  On select itineraries, eat, dance and be merry at a buccaneer bash fit for a pirate.', 100, '../resources/images/activity_2.png');
+VALUES(2,'Pirate Night',100,'  On select itineraries, eat, dance and be merry at a buccaneer bash fit for a pirate.', 100, 'activity_2.png');
 Insert INTO onBoardActivity
-VALUES(3,'A Musical Spectacular',80,'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza.', 100, '../resources/images/activity_3.png');
+VALUES(3,'Frozen, A Musical Spectacular',80,'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza.', 100, 'activity_3.png');
 
 INSERT INTO route
-VALUES(1, 'Dawes Glacier, Alaska | Skagway, Alaska | Juneau, Alaska | Ketchikan, Alaska', 'Disney Wonder ship', 1595203200000,1595808000000, '../resources/videos/video1.mp4', 5000, 1);
+VALUES(1, 'Dawes Glacier, Alaska | Skagway, Alaska | Juneau, Alaska | Ketchikan, Alaska', 'Disney Wonder ship', 1595203200000,1595808000000, 'video1.mp4', 5000);
 
 INSERT INTO route
-VALUES(2, 'ddd', 'Disney Wonder ship', 1595203200000,1595808000000, '../resources/videos/video1.mp4', 5000, 1);
+VALUES(2, 'ddd', 'Disney Wonder ship', 1595203200000,1595808000000, 'video1.mp4', 5000);
 
 
 INSERT INTO customer
-VALUES(1,'KRISHMA', 'sukhija90');
+VALUES(1,'KRISHMA@g.c', 'sukhija90');
 
 
 --INSERT INTO  Booking

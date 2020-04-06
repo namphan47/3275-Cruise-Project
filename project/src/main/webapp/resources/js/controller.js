@@ -16,6 +16,16 @@ var ROOM_NO = {
 	to : 1034
 };
 
+var ROOM_TYPES = {};
+
+var ACTIVITIES = {};
+
+var formatter = new Intl.NumberFormat('en-US', {
+	  style: 'currency',
+	  currency: 'USD',
+	  minimumFractionDigits: 2
+	});
+
 var params = new URLSearchParams(window.location.search);
 
 function init() {
@@ -26,6 +36,26 @@ function init() {
 		room : {},
 		activities : {}
 	};
+}
+
+function calculateTotal(){
+	var total = 0;
+	
+	try{
+		total +=DATA.room_type.basePrice/2 * DATA.room_type.guest;
+		
+		for(var act of Object.keys(DATA.activities)){
+			total += DATA.activities[act].price*DATA.activities[act].count;
+		}
+		
+	}catch (e) {
+		
+	}
+	if(isNaN(total)){
+		total = 0;
+	}
+	console.log(total);
+	$("#total-text").text(formatter.format(total));
 }
 
 function selectCruise(id) {
@@ -45,48 +75,107 @@ function selectRoute(id) {
 }
 
 function nextRoom() {
-	console.log($("[name=name]"));
-	var name = $("[name=name]").val();
-	if (name) {
-		DATA.room_type["name"] = name;
+	if(Object.keys(DATA.room_type).length === 0){
+		alert("Room type cannot be empty");
+		return;
+	}
 		DATA.room_type["guest"] = parseInt($("[name=guest-number]").val());
 		save();
 		params.set("room-type-id", DATA.room_type["id"]);
 		params.set("name", DATA.room_type["name"]);
 		params.set("guest", DATA.room_type["guest"]);
 		move(URLS.room_selection + "?" + params.toString());
-	} else {
-		alert("Name cannot be empty");
-	}
 }
 
 function nextActivity() {
 	if ($("[name=room-selection]")[0].selectedIndex > 0) {
 		save();
 		params.set("guest", DATA.room["id"]);
-		move(URLS.activity_selection+ "?" + params.toString());
+		move(URLS.activity_selection + "?" + params.toString());
 	} else {
 		alert("Please select room");
 	}
 }
 
+function nextSummary(){
+	save();
+	var ids = [];
+	for(var id of Object.keys(DATA.activities)){
+		ids.push(id);
+	}
+	params.set("activities",ids.join(","));
+	move(URLS.summary + "?" + params.toString());
+}
+
 function addActivity(dom) {
 	var id = $(dom).data("activity");
 	console.log(id);
-	DATA.activities[id] = {
-		price : 100,
-		count : 1
-	};
-	renderActivities();
+	if (DATA.activities[id]) {
+		removeActivity(id);
+	} else {
+		var obj = ACTIVITIES[id];
+		DATA.activities[id] = obj;
+		DATA.activities[id].count = 1;
+		
+		console.log(DATA.activities);
+		renderActivities();
+	}
+	calculateTotal();
 }
 
 function removeActivity(id) {
+	
 	delete DATA.activities[id];
 	renderActivities();
 }
 
 function renderActivities() {
+	var $dom = $("#activities-selection-form");
+	$dom.html("");
+	$("[name=activity-box]").parent().removeClass("active");
+	if(Object.keys(DATA.activities).length == 0){
+		$dom.append("<h5>No Activities is selected</h5>");
+	}
+	for(var id of Object.keys(DATA.activities)){
+		var obj = DATA.activities[id];
+		$("[name=activity-box][data-activity=" + id + "]").parent().addClass("active");
+		$dom.append(`
+		<div>
+			<div class="form-group">
+				<div class="d-flex">
+					<div class="input-text flex-grow-1">${obj.name}</div>
+					<input type="number" min=1
+					 class="form-control ml-3" onchange="onActivityChange(this,${id})"
+						style="width: 60px;" value="${obj.count}" data-activity="${id}">
+					<div
+						class="icon justify-content-center align-items-center mx-3">
+						<i class="far fa-times-circle cursor-pointer" onClick="removeActivity(${id})"></i>
+					</div>
+				</div>
+			</div>
+			<h4 class="text-right">${obj.price} x ${obj.count}</h4>
+		</div>
+		`);
+	}
+}
 
+function checkout(){
+	var $email = $("[name=email]");
+	if(!$email[0].checkValidity()){
+		alert("An valid email is required");
+	}
+	var activity_ids = [];
+	for(var id of Object.keys(DATA.activities)){
+		activity_ids.push(DATA.activities[id].count);
+	}
+	var new_params = params;
+	new_params.set("email",$email.val());
+	new_params.set("room-number",DATA.room.id);
+	new_params.set("activities-count",activity_ids.join(","));
+	new_params.set("guest-count",DATA.room_type.guest);
+	$.get(window.location.origin + "/" + URLS.summary + "?" + new_params.toString(),function(){
+		
+	});
 }
 
 function checkPage() {
@@ -99,14 +188,23 @@ function checkPage() {
 			selectRoomType($(".image-group[data-index=" + DATA.room_type["id"]
 					+ "]"));
 		}
+		calculateTotal();
 	} else if (currentPage.indexOf(URLS.room_selection) > 0) {
 		$("[name=room-selection]").val(DATA.room["id"]);
 		selectRoom($(".box[data-number=" + DATA.room["id"] + "]"));
+		calculateTotal();
 	} else if (currentPage.indexOf(URLS.activity_selection) > 0) {
+		renderActivities();
+		calculateTotal();
+	} else if (currentPage.indexOf(URLS.summary) > 0) {
+		renderActivities();
+		calculateTotal();
 	}
-	
 	// set room
 	$("#selected-room").text(DATA.room["id"]);
+	
+	// set guest
+	$("#number-of-guest").text(DATA.room_type.guest);
 }
 
 function save() {
@@ -124,13 +222,29 @@ function moveWithParams(path) {
 
 // animations
 
+function onActivityChange(dom, id){
+	console.log(dom);
+	console.log($(dom).val());
+	DATA.activities[id].count = parseInt($(dom).val()); 
+	
+	calculateTotal();
+	renderActivities();
+}
+
 function selectRoomType(dom) {
 	console.log(dom);
 	$(".image-group").parent().removeClass("active");
 	$(dom).parent().addClass("active");
 	var index = $(dom).data("index");
-	DATA.room_type["id"] = index;
+	DATA.room_type = ROOM_TYPES[index];
 	$("[name=room-type]").val(index);
+	onGuestChange();
+	calculateTotal();
+}
+
+function onGuestChange(){
+	DATA.room_type["guest"] = parseInt($("[name=guest-number]").val());
+	calculateTotal();
 }
 
 function selectRoom(dom) {
@@ -142,6 +256,8 @@ function selectRoom(dom) {
 	var id = parseInt($(dom).data("number"));
 	$selection.val(id);
 	DATA.room["id"] = id;
+	
+	calculateTotal();
 }
 
 function generateRoomTypeSelection() {

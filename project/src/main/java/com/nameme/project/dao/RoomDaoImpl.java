@@ -38,8 +38,6 @@ public class RoomDaoImpl implements RoomDao {
 	}
 	
 	public int create(int id, int type_id) {
-		// TODO Auto-generated method stub
-		
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("id", id);
 		params.put("type_id", type_id);

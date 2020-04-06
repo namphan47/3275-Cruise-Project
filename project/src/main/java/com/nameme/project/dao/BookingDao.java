@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.nameme.project.model.BookingModel;
 
-
 public interface BookingDao {
-	 
+
 	List<BookingModel> findAll();
 
+	int create(int id, int guestCount, int customerID, int routeID, int roomNumber);
 }

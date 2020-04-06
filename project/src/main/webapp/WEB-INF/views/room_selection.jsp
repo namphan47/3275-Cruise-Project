@@ -34,7 +34,16 @@ ROOM_NO["disabled"] = [
 			  <c:forEach items="${rooms}" var="room">
 			  ${room.roomNumber},
 		  </c:forEach>
-		]
+		];
+var ROOM_TYPES = {
+		  <c:forEach items="${roomTypes}" var="roomType">
+		  ${roomType.id}:{
+			  id:${roomType.id},
+			  name: "${roomType.name}",
+			  basePrice: ${roomType.basePrice}
+		  },
+	  </c:forEach>
+};
 </script>
 </head>
 
@@ -69,7 +78,7 @@ ROOM_NO["disabled"] = [
 									<div class="image-group">
 										<img src="../resources/images/${roomType.image}" alt="">
 									</div>
-									<div class="flex-grow-1 pl-3">
+									<div class="flex-grow-1 pl-3 d-flex flex-column">
 										<div class="d-flex align-items-end">
 											<h5>${roomType.name}</h5>
 											<div class="flex-grow-1"></div>
@@ -79,7 +88,10 @@ ROOM_NO["disabled"] = [
 													type="currency" currencySymbol="$" />
 											</h4>
 										</div>
-										<div>${roomType.description}</div>
+										<div class="flex-grow-1">${roomType.description}</div>
+										<h5>
+											Number of guests: <span id="number-of-guest"></span>
+										</h5>
 									</div>
 								</div>
 							</div>
@@ -177,7 +189,9 @@ ROOM_NO["disabled"] = [
 								<hr>
 								<div class="d-flex">
 									<span>Sub Total</span> <span class="flex-grow-1"></span>
-									<h4>$25,000 CAD</h4>
+									<h4>
+										<span id="total-text"></span> CAD
+									</h4>
 								</div>
 							</div>
 						</div>
