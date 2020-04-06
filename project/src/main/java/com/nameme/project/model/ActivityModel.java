@@ -1,39 +1,41 @@
 package com.nameme.project.model;
 
 public class ActivityModel {
-	public int activityId;
-	public String name;
-	public String description;
-	public String imageSrc;
-	public double price;
+	public int id;
+	public double totalAmount;
 	public int guestCount;
+	public int bookingID;
 
-	public double calculatePrice() {
-		return price * guestCount;
+	public int getId() {
+		return id;
 	}
 
-	public int getActivityId() {
-		return activityId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public double getTotalAmount() {
+		return totalAmount;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public String getImageSrc() {
-		return imageSrc;
-	}
-
-	public double getPrice() {
-		return price;
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 
 	public int getGuestCount() {
 		return guestCount;
+	}
+
+	public void setGuestCount(int guestCount) {
+		this.guestCount = guestCount;
+	}
+
+	public int getBookingID() {
+		return bookingID;
+	}
+
+	public void setBookingID(int bookingID) {
+		this.bookingID = bookingID;
 	}
 
 }

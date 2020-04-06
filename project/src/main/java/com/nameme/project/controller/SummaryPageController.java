@@ -45,7 +45,7 @@ public class SummaryPageController {
 		CruiseModel cruise = cruiseDao.findById(id);
 		RouteModel route = routeDao.findById(routeId);
 		RoomTypeModel roomType = roomTypeDao.findById(roomTypeId);
-		List<ActivityModel> activityList = activityDao.findAll();
+		List<OnBoardActivityModel> activityList = activityDao.findAllOnboard();
 
 		model.addAttribute("cruise", cruise);
 		model.addAttribute("route", route);
@@ -61,15 +61,8 @@ public class SummaryPageController {
 			@RequestParam("room-type-id") int roomTypeId, @RequestParam("room-number") int roomNumber,
 			@RequestParam("activities") String activities, @RequestParam("activities-count") String activitiesCount,
 			@RequestParam("guest-count") int guestCount, @RequestParam("email") String email, Model model) {
-//		CruiseModel cruise = cruiseDao.findById(id);
-//		RouteModel route = routeDao.findById(routeId);
-//		RoomTypeModel roomType = roomTypeDao.findById(roomTypeId);
-//		List<ActivityModel> activityList = activityDao.findAll();
-//
-//		model.addAttribute("cruise", cruise);
-//		model.addAttribute("route", route);
-//		model.addAttribute("roomType", roomType);
-//		model.addAttribute("activities", activityList);
+		// get room type
+		RoomTypeModel roomTypeModel = roomTypeDao.findById(roomTypeId);
 
 		// create room
 		roomDao.create(roomNumber, roomTypeId);
@@ -88,12 +81,38 @@ public class SummaryPageController {
 		// create activities
 		String[] activityIds = activities.split(",");
 		String[] activityCounts = activitiesCount.split(",");
+
+		List<OnBoardActivityModel> activityOnBoardList = activityDao.findAllOnboard();
+		double total = roomTypeModel.basePrice / 2 * guestCount;
+
+		for (int i = 0; i < activityIds.length; i++) {
+			OnBoardActivityModel onBoardActivityModel = null;
+			for (OnBoardActivityModel o : activityOnBoardList) {
+				if (o.activityId == Integer.parseInt(activityIds[i])) {
+					onBoardActivityModel = o;
+					break;
+				}
+			}
+			total += onBoardActivityModel.price * Integer.parseInt(activityCounts[i]);
+			activityDao.createActivity(Integer.parseInt(activityCounts[i]), bookingId, total);
+		}
+
+		bookingDao.updateTotal(bookingId, total);
+
+		List<ActivityModel> activityList = activityDao.findAllByBookingId(bookingId);
+
 		System.out.println(roomNumber);
 		System.out.println(activities);
 		System.out.println(activitiesCount);
 
 		System.out.println(customerDao.findById(23));
+		System.out.println(activityList.size());
 
-		return "summary";
+		return "thank-you";
+	}
+
+	@RequestMapping("/thank-you")
+	public String handler(Model model) {
+		return "thank-you";
 	}
 }

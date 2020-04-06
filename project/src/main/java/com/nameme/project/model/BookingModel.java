@@ -14,11 +14,11 @@ public class BookingModel {
 	public List<ActivityModel> activities = new ArrayList<ActivityModel>();
 	public RoomModel room;
 
-	public double calculatePrice() {
-		double total = room.calculatePrice(guestCount);
-		for (ActivityModel a : activities) {
-			total += a.calculatePrice();
-		}
-		return total;
-	}
+//	public double calculatePrice() {
+//		double total = room.calculatePrice(guestCount);
+//		for (ActivityModel a : activities) {
+//			total += a.calculatePrice();
+//		}
+//		return total;
+//	}
 }

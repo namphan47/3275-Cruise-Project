@@ -14,7 +14,7 @@ CREATE TABLE onBoardActivity(
  activityName VARCHAR(5000),
  guestCount INTEGER,
  description VARCHAR(5000),
- price NUMBER,
+ price FLOAT,
  imageSrc VARCHAR(5000)
 );
 
@@ -64,19 +64,21 @@ CREATE TABLE booking(
  guestCount INTEGER,
  customerID INTEGER,
  routeID INTEGER,
- roomNumber INTEGER
+ roomNumber INTEGER,
+ total FLOAT
 );
 
 
 CREATE TABLE portOfCall(
  portName VARCHAR(500),
  portDesc VARCHAR(500),
- price INTEGER,
+ price FLOAT,
  imageSrc VARCHAR(500)
 );
 
 CREATE TABLE activity(
- id INTEGER PRIMARY KEY,
+ id INTEGER PRIMARY KEY AUTO_INCREMENT,
  guestCount INTEGER,
- bookingID INTEGER
+ bookingID INTEGER,
+ totalAmount FLOAT
 );

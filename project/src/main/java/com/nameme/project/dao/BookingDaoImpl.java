@@ -42,7 +42,16 @@ public class BookingDaoImpl implements BookingDao {
 		params.put("customerID", customerID);
 		params.put("routeID", routeID);
 		params.put("roomNumber", roomNumber);
-		String sql = "INSERT INTO booking VALUES(:id,:guestCount,:customerID,:routeID,:roomNumber)";
+		String sql = "INSERT INTO booking VALUES(:id,:guestCount,:customerID,:routeID,:roomNumber, 0)";
+
+		return namedParameterJdbcTemplate.update(sql, params);
+	}
+
+	public int updateTotal(int id, double total) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("id", id);
+		params.put("total", total);
+		String sql = "UPDATE booking SET total = :total WHERE bookingID = :id";
 
 		return namedParameterJdbcTemplate.update(sql, params);
 	}

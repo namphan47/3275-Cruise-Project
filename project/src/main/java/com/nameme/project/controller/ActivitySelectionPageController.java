@@ -35,7 +35,7 @@ public class ActivitySelectionPageController {
 		CruiseModel cruise = cruiseDao.findById(id);
 		RouteModel route = routeDao.findById(routeId);
 		RoomTypeModel roomType = roomTypeDao.findById(roomTypeId);
-		List<ActivityModel> activityList = activityDao.findAll();
+		List<OnBoardActivityModel> activityList = activityDao.findAllOnboard();
 
 		model.addAttribute("cruise", cruise);
 		model.addAttribute("route", route);

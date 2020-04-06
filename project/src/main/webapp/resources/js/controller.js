@@ -6,7 +6,8 @@ var URLS = {
 	room_type : "room_type",
 	room_selection : "room_selection",
 	activity_selection : "activity_selection",
-	summary : "summary"
+	summary : "summary",
+	thankYou:"summary/thank-you"
 };
 
 var ROOM_NO = {
@@ -163,6 +164,7 @@ function checkout(){
 	var $email = $("[name=email]");
 	if(!$email[0].checkValidity()){
 		alert("An valid email is required");
+		return;
 	}
 	var activity_ids = [];
 	for(var id of Object.keys(DATA.activities)){
@@ -174,8 +176,11 @@ function checkout(){
 	new_params.set("activities-count",activity_ids.join(","));
 	new_params.set("guest-count",DATA.room_type.guest);
 	$.get(window.location.origin + "/" + URLS.summary + "?" + new_params.toString(),function(){
-		
+		init();
+		save();
+		move(URLS.thankYou);		
 	});
+
 }
 
 function checkPage() {

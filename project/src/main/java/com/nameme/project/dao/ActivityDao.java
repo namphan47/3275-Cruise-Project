@@ -2,11 +2,13 @@ package com.nameme.project.dao;
 
 import java.util.List;
 
-import com.nameme.project.model.ActivityModel;
+import com.nameme.project.model.*;
 
  
 public interface ActivityDao {
 	 
-	List<ActivityModel> findAll();
+	List<OnBoardActivityModel> findAllOnboard();
+	List<ActivityModel> findAllByBookingId(int bookingId);
+	int createActivity(int guestCount, int bookingID, double totalAmount);
 
 }
