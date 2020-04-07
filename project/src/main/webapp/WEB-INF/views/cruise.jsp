@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-
+<!-- Author: Nam Phan, 2020 -->
 <head>
 <title>Home</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
