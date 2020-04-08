@@ -55,7 +55,7 @@ var ACTIVITIES = {
 					<div class="d-flex h-100">
 						<div class="w-100">
 							<div class="pb-5 mb-5 px-3 d-flex flex-column h-100">
-								<div class="flex-grow-1">
+								<div class="flex-grow-1" style="overflow:auto;">
 									<h4>
 										Sailing to - ${cruise.name} </br> ${route.name}
 									</h4>
