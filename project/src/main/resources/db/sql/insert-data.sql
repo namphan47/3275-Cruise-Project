@@ -43,6 +43,13 @@ VALUES(1,'KRISHMA@g.c', 'sukhija90');
 --INSERT INTO  Booking
 --VALUES(3, 'Frozen, A Musical Spectacular' ,3 , 'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza inside the Walt Disney Theatre—now playing on the Disney Wonder and the Disney Fantasy.' , 100 , 'activity_3.png' );
 
+INSERT INTO portOfCall
+VALUES( 'Homer' , 'Homer is a port town located on Kenai Peninsulas southern tip, in Alaska USA.  A most distinguishing feature is the Homer Spit, which is a gravel bar extending into the bay on which Homer Harbor lies.',200,'port_2.png' ) ;
+
+INSERT INTO portOfCall
+VALUES( 'Ketchikan' , 'Winner of seven regional Emmys and three national Telly awards, the Ketchikan Story Project chronicles the life and times of Alaska First City. Nearby Misty Fiords National Monument is a glacier-carved wilderness featuring snowcapped mountains, waterfalls and salmon spawning streams. ',200,'port_1.png' );
+--INSERT INTO portOfCall
+--VALUES( 'Janeau' , 'Juneau is the capital of Alaska since 1900. It is located in the southeastern part of Alaska, sheltered from the Pacific by a belt of islands 120 km (75 miles) wide. ',200,'port_1.png' );
 
 
 
