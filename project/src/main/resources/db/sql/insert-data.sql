@@ -26,7 +26,7 @@ INSERT INTO route
 VALUES(1, 'Dawes Glacier, Alaska | Skagway, Alaska | Juneau, Alaska | Ketchikan, Alaska', 'Disney Wonder ship', 1595203200000,1595808000000, 'video1.mp4', 5000);
 
 INSERT INTO route
-VALUES(2, 'ddd', 'Disney Wonder ship', 1595203200000,1595808000000, 'video1.mp4', 5000);
+VALUES(2, 'Dawes Glacier, Alaska | Icy Strait Point, Alaska | Juneau, Alaska | Ketchikan, Alaska', 'Disney Wonder ship', 1595203200000,1595808000000, 'video1.mp4', 5000);
 
 
 INSERT INTO customer
@@ -41,6 +41,7 @@ VALUES(1,'KRISHMA@g.c', 'sukhija90');
 --
 --INSERT INTO  Booking
 --VALUES(3, 'Frozen, A Musical Spectacular' ,3 , 'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza inside the Walt Disney Theatre—now playing on the Disney Wonder and the Disney Fantasy.' , 100 , 'activity_3.png' );
+
 
 
 INSERT INTO portOfCall
@@ -61,8 +62,8 @@ VALUES(3 , 'Juneau',''  );
 
 
 
-INSERT INTO room
-VALUES(1001 , 1 );
+--INSERT INTO room
+--VALUES(1001 , 1 );
 --
 --INSERT INTO room
 --VALUES(202 , 2 );
