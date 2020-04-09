@@ -37,11 +37,7 @@ VALUES(1,'KRISHMA@g.c', 'sukhija90');
 
 
 
-INSERT INTO portOfCall
-VALUES( 'Ketchikan' , ' Winner of seven regional Emmys and three national Telly awards, the Ketchikan Story Project chronicles the life and times of Alaska First City.' , 200 , 'port_1.png' );
 
-INSERT INTO portOfCall
-VALUES( 'Homer' , 'A most distinguishing feature is the Homer Spit, which is a gravel bar extending into the bay on which Homer Harbor lies.' , 200 , 'port_2.png' ) ;
 
 
 INSERT INTO cruise
