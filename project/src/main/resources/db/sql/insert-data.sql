@@ -14,6 +14,14 @@ VALUES(2,'Pirate Night',100,'  On select itineraries, eat, dance and be merry at
 Insert INTO onBoardActivity
 VALUES(3,'Frozen, A Musical Spectacular',80,'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza.', 100, 'activity_3.png');
 
+Insert INTO onBoardActivity
+VALUES(5,'A LUXURIOUS DAY AT THE SPA',95,' Keep calm and make a self-care plan. Treat yourself to spa therapies and magical makeovers in the world-class comfort of our salon and spas.', 100, 'activity_5.jpg');
+
+Insert INTO onBoardActivity
+VALUES(6,' Party Like a Pirate',65,'Feast on a pirate-themed dinner followed by a “Pirates in the Caribbean” show and deck party. It included entry for adult and 2 course meal. Drinks Excluded.', 100, 'activity_6.jpg');
+Insert INTO onBoardActivity
+VALUES(4,'THE DREAM OF SHIPS: AN ENCHANTED CLASSIC',75,'An Enchanted Classic is a touching story about a little girl named Anne Marie who can’t seem to find it in her heart to believe. The story begins one night as Anne Marie, almost asleep, is visited by several beloved Disney Characters. Each recounts a tale, complete with rousing renditions of treasured songs', 55, 'activity_4.jpg');
+
 
 INSERT INTO route
 VALUES(1, 'Dawes Glacier, Alaska | Skagway, Alaska | Juneau, Alaska | Ketchikan, Alaska', 'Disney Wonder ship', 1595203200000,1595808000000, 'video1.mp4', 5000);
