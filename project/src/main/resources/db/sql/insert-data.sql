@@ -13,14 +13,7 @@ Insert INTO onBoardActivity
 VALUES(2,'Pirate Night',100,'  On select itineraries, eat, dance and be merry at a buccaneer bash fit for a pirate.', 100, 'activity_2.png');
 Insert INTO onBoardActivity
 VALUES(3,'Frozen, A Musical Spectacular',80,'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza.', 100, 'activity_3.png');
-Insert INTO onBoardActivity
-VALUES(4,'SHIP DREAMS: AN ENCHANTED CLASSIC',85,'Celebrate the power of dreams during this award-winning live show that tells the story of little Anne Marie, a girl who can’t find it in her heart to believe—until an unexpected visit makes her sing a different tune.', 100, 'activity_4.jpg');
 
-Insert INTO onBoardActivity
-VALUES(5,'A Day at Spa',100,'Treat yourself to spa therapies and magical makeovers in the world-class comfort of our salon and spas.', 50, 'activity_5.jpg');
-
-Insert INTO onBoardActivity
-VALUES(6,'Party Like a Pirate',50,'Feast on a pirate-themed dinner followed by a “Pirates in the Caribbean” show and deck party.', 60, 'activity_6.jpg');
 
 INSERT INTO route
 VALUES(1, 'Dawes Glacier, Alaska | Skagway, Alaska | Juneau, Alaska | Ketchikan, Alaska', 'Disney Wonder ship', 1595203200000,1595808000000, 'video1.mp4', 5000);
@@ -40,7 +33,7 @@ VALUES(1,'KRISHMA@g.c', 'sukhija90');
 --VALUES(2, 'Pirate Night' ,2 , 'On select itineraries, eat, dance and be merry at a buccaneer bash fit for a pirate.' ,100, 'activity_2.png' );
 --
 --INSERT INTO  Booking
---VALUES(3, 'Frozen, A Musical Spectacular' ,3 , 'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza inside the Walt Disney Theatre—now playing on the Disney Wonder and the Disney Fantasy.' , 100 , 'activity_3.png' );
+--VALUES(3, 'Frozen, A Musical Spectacular' ,3 , 'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza inside the Walt Disney Theatreâ€”now playing on the Disney Wonder and the Disney Fantasy.' , 100 , 'activity_3.png' );
 
 
 
