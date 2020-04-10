@@ -82,31 +82,37 @@ public class SummaryPageController {
 		String[] activityIds = activities.split(",");
 		String[] activityCounts = activitiesCount.split(",");
 
-		List<OnBoardActivityModel> activityOnBoardList = activityDao.findAllOnboard();
 		double total = roomTypeModel.basePrice / 2 * guestCount;
+		if (activityIds.length > 0 && activityCounts.length > 0) {
+			try {
+				List<OnBoardActivityModel> activityOnBoardList = activityDao.findAllOnboard();
 
-		for (int i = 0; i < activityIds.length; i++) {
-			OnBoardActivityModel onBoardActivityModel = null;
-			for (OnBoardActivityModel o : activityOnBoardList) {
-				if (o.activityId == Integer.parseInt(activityIds[i])) {
-					onBoardActivityModel = o;
-					break;
+				for (int i = 0; i < activityIds.length; i++) {
+					OnBoardActivityModel onBoardActivityModel = null;
+					for (OnBoardActivityModel o : activityOnBoardList) {
+						if (o.activityId == Integer.parseInt(activityIds[i])) {
+							onBoardActivityModel = o;
+							break;
+						}
+					}
+					total += onBoardActivityModel.price * Integer.parseInt(activityCounts[i]);
+					activityDao.createActivity(Integer.parseInt(activityCounts[i]), bookingId, total);
 				}
+			}catch (Exception e) {
 			}
-			total += onBoardActivityModel.price * Integer.parseInt(activityCounts[i]);
-			activityDao.createActivity(Integer.parseInt(activityCounts[i]), bookingId, total);
+
 		}
 
 		bookingDao.updateTotal(bookingId, total);
 
-		List<ActivityModel> activityList = activityDao.findAllByBookingId(bookingId);
-
-		System.out.println(roomNumber);
-		System.out.println(activities);
-		System.out.println(activitiesCount);
-
-		System.out.println(customerDao.findById(23));
-		System.out.println(activityList.size());
+//		List<ActivityModel> activityList = activityDao.findAllByBookingId(bookingId);
+//
+//		System.out.println(roomNumber);
+//		System.out.println(activities);
+//		System.out.println(activitiesCount);
+//
+//		System.out.println(customerDao.findById(23));
+//		System.out.println(activityList.size());
 
 		return "thank-you";
 	}

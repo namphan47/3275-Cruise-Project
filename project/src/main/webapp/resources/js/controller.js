@@ -7,7 +7,8 @@ var URLS = {
 	room_selection : "room_selection",
 	activity_selection : "activity_selection",
 	summary : "summary",
-	thankYou:"summary/thank-you"
+	thankYou:"summary/thank-you",
+	admin:"admin"
 };
 
 var ROOM_NO = {
