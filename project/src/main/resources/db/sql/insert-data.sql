@@ -13,14 +13,15 @@ Insert INTO onBoardActivity
 VALUES(2,'Pirate Night',100,'  On select itineraries, eat, dance and be merry at a buccaneer bash fit for a pirate.', 100, 'activity_2.png');
 Insert INTO onBoardActivity
 VALUES(3,'Frozen, A Musical Spectacular',80,'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza.', 100, 'activity_3.png');
-Insert INTO onBoardActivity
-VALUES(4,'SHIP DREAMS: AN ENCHANTED CLASSIC',85,'Celebrate the power of dreams during this award-winning live show that tells the story of little Anne Marie, a girl who canít find it in her heart to believeóuntil an unexpected visit makes her sing a different tune.', 100, 'activity_4.jpg');
 
 Insert INTO onBoardActivity
-VALUES(5,'A Day at Spa',100,'Treat yourself to spa therapies and magical makeovers in the world-class comfort of our salon and spas.', 50, 'activity_5.jpg');
+VALUES(5,'A LUXURIOUS DAY AT THE SPA',95,' Keep calm and make a self-care plan. Treat yourself to spa therapies and magical makeovers in the world-class comfort of our salon and spas.', 100, 'activity_5.jpg');
 
 Insert INTO onBoardActivity
-VALUES(6,'Party Like a Pirate',50,'Feast on a pirate-themed dinner followed by a ìPirates in the Caribbeanî show and deck party.', 60, 'activity_6.jpg');
+VALUES(6,' Party Like a Pirate',65,'Feast on a pirate-themed dinner followed by a ‚ÄúPirates in the Caribbean‚Äù show and deck party. It included entry for adult and 2 course meal. Drinks Excluded.', 100, 'activity_6.jpg');
+Insert INTO onBoardActivity
+VALUES(4,'THE DREAM OF SHIPS: AN ENCHANTED CLASSIC',75,'An Enchanted Classic is a touching story about a little girl named Anne Marie who can‚Äôt seem to find it in her heart to believe. The story begins one night as Anne Marie, almost asleep, is visited by several beloved Disney Characters. Each recounts a tale, complete with rousing renditions of treasured songs', 55, 'activity_4.jpg');
+
 
 INSERT INTO route
 VALUES(1, 'Dawes Glacier, Alaska | Skagway, Alaska | Juneau, Alaska | Ketchikan, Alaska', 'Disney Wonder ship', 1595203200000,1595808000000, 'video1.mp4', 5000);
@@ -40,15 +41,18 @@ VALUES(1,'KRISHMA@g.c', 'sukhija90');
 --VALUES(2, 'Pirate Night' ,2 , 'On select itineraries, eat, dance and be merry at a buccaneer bash fit for a pirate.' ,100, 'activity_2.png' );
 --
 --INSERT INTO  Booking
---VALUES(3, 'Frozen, A Musical Spectacular' ,3 , 'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza inside the Walt Disney Theatreónow playing on the Disney Wonder and the Disney Fantasy.' , 100 , 'activity_3.png' );
-
-
+--VALUES(3, 'Frozen, A Musical Spectacular' ,3 , 'Be enchanted as the magic of Frozen springs to life before your eyes in this musical extravaganza inside the Walt Disney Theatre‚Äînow playing on the Disney Wonder and the Disney Fantasy.' , 100 , 'activity_3.png' );
 
 INSERT INTO portOfCall
-VALUES( 'Ketchikan' , ' Winner of seven regional Emmys and three national Telly awards, the Ketchikan Story Project chronicles the life and times of Alaska First City.' , 200 , 'port_1.png' );
+VALUES( 'Homer' , 'Homer is a port town located on Kenai Peninsulas southern tip, in Alaska USA.  A most distinguishing feature is the Homer Spit, which is a gravel bar extending into the bay on which Homer Harbor lies.',200,'port_2.png' ) ;
 
 INSERT INTO portOfCall
-VALUES( 'Homer' , 'A most distinguishing feature is the Homer Spit, which is a gravel bar extending into the bay on which Homer Harbor lies.' , 200 , 'port_2.png' ) ;
+VALUES( 'Ketchikan' , 'Winner of seven regional Emmys and three national Telly awards, the Ketchikan Story Project chronicles the life and times of Alaska First City. Nearby Misty Fiords National Monument is a glacier-carved wilderness featuring snowcapped mountains, waterfalls and salmon spawning streams. ',200,'port_1.png' );
+--INSERT INTO portOfCall
+--VALUES( 'Janeau' , 'Juneau is the capital of Alaska since 1900. It is located in the southeastern part of Alaska, sheltered from the Pacific by a belt of islands 120 km (75 miles) wide. ',200,'port_1.png' );
+
+
+
 
 
 INSERT INTO cruise
