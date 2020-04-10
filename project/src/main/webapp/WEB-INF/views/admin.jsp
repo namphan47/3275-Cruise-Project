@@ -46,6 +46,12 @@ value="/resources/fontawesome-free-5.12.1-web/css/all.min.css" />"
 								<div>Customer ID: ${booking.customerID}</div>
 								<div>Route ID: ${booking.routeID}</div>
 								<div>Room Number: ${booking.roomNumber}</div>
+								<div>Customer ID: ${booking.customer.email}</div>
+								<div>Route Name: ${booking.route.name} </div>
+								<div>${booking.roomType.name}</div>
+									<c:forEach items="${booking.activities}" var="act">
+									<div>Activities Name: ${act}</div>
+									</c:forEach>
 								<span class="flex-grow-1"></span>							
 
 							</div>

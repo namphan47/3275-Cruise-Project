@@ -9,10 +9,27 @@ public class BookingModel {
 	public int customerID;
 	public int routeID;
 	public int roomNumber;
+	public int roomTypeID;
 	public CustomerModel customer;
 	public RouteModel route;
 	public List<ActivityModel> activities = new ArrayList<ActivityModel>();
 	public RoomModel room;
+	public RoomTypeModel roomType;
+	
+
+	public int getRoomTypeID() {
+		return roomTypeID;
+	}
+	public void setRoomTypeID(int roomTypeID) {
+		this.roomTypeID = roomTypeID;
+	}
+	
+	public RoomTypeModel getRoomType() {
+		return roomType;
+	}
+	public void setRoomType(RoomTypeModel roomType) {
+		this.roomType = roomType;
+	}
 	public int getId() {
 		return id;
 	}
